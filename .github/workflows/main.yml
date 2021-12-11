@@ -20,15 +20,15 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.6.8 # This is the action
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.APP_NAME}} #Must be unique in Heroku
-          heroku_email: ${{secrets.EMAIL}}
+          heroku_api_key:92b12fae-6759-4404-8047-43aace84e9b4 ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name:gaowen525 ${{secrets.APP_NAME}} #Must be unique in Heroku
+          heroku_email:sfhhuidu@gmail.com ${{secrets.EMAIL}}
           usedocker: true
           # docker_build_args: |
           #   HD_UUID
         env:
           # 这是为了heroku，注意前缀有个HD，这是为了告诉heroku-deploy，这些变量需要传入到container 中。
-          HD_UUID: ${{ secrets.HEROKU_V2RAY_UUID }} # UUID for v2ray user, 为了安全，一定要放入github action token中
+          HD_UUID: ce7ea10b-5b27-49ab-a93d-6b184df9cce9${{ secrets.HEROKU_V2RAY_UUID }} # UUID for v2ray user, 为了安全，一定要放入github action token中
           NODE_ENV: production
           SECRET_KEY: ${{ secrets.MY_SECRET_KEY }}
   stop-start:
